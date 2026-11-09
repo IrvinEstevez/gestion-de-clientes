@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Clientes - Semana 3</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <main class="contenedor">
+        <header>
+            <h1>GESTIÓN DE CLIENTES</h1>
+        </header>
+
+        <section class="tarjeta">
+            <h2 id="tituloFormulario">Registrar cliente</h2>
+            <form id="formularioCliente">
+                <input type="hidden" id="idCliente">
+                <div class="campos">
+                    <label>Nombres
+                        <input name="nombres" id="nombres" type="text" maxlength="80">
+                    </label>
+                    <label>Apellidos
+                        <input name="apellidos" id="apellidos" type="text" maxlength="80">
+                    </label>
+                    <label>Identificación
+                        <input name="identificacion" id="identificacion" type="text" maxlength="20">
+                    </label>
+                    <label>Correo electrónico
+                        <input name="correo" id="correo" type="email" maxlength="150">
+                    </label>
+                    <label>Teléfono
+                        <input name="telefono" id="telefono" type="tel" maxlength="20" >
+                    </label>
+                    <label>Dirección
+                        <input name="direccion" id="direccion" type="text" maxlength="160">
+                    </label>
+                    <label>Ciudad
+                        <input name="ciudad" id="ciudad" type="text" maxlength="80">
+                    </label>
+                    <label>Provincia
+                        <input name="provincia" id="provincia" type="text" maxlength="80">
+                    </label>
+                    <label>Fecha de nacimiento
+                        <input name="fechaNacimiento" id="fechaNacimiento" type="date" required>
+                    </label>
+                    <label>Estado
+                        <select name="estado" id="estado" required>
+                            <option value="Activo">Activo</option>
+                            <option value="Inactivo">Inactivo</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="acciones-formulario">
+                    <button type="submit" class="boton" id="guardar">Guardar</button>
+                    <button type="button" class="boton secundario" id="cancelar" hidden>Cancelar edición</button>
+                </div>
+            </form>
+            <p id="mensaje" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="tarjeta">
+            <h2>Clientes registrados</h2>
+            <div class="tabla-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th><th>Nombres</th><th>Apellidos</th><th>Identificación</th>
+                            <th>Correo</th><th>Teléfono</th><th>Dirección</th><th>Ciudad</th>
+                            <th>Provincia</th><th>Fecha de nacimiento</th><th>Estado</th><th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTabla">
+                        <tr><td colspan="12">Cargando clientes...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
